@@ -1,0 +1,21 @@
+<p>product-index works!</p>
+
+<h2>Products</h2>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let product of products">
+        <a class="text-decoration-none">
+            <div class="row">
+                <a class="offset-md-1 col-md-4 my-auto text-decoration-none" [routerLink]="['/products', product.id]">
+                    {{ product.name }}
+                </a>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-outline-primary" [routerLink]="['/product', product.id, 'edit']">edit</button>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-outline-danger">delete</button>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

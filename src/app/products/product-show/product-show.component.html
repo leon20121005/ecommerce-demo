@@ -1,0 +1,26 @@
+<p>product-show works!</p>
+
+<h2>{{ product.name }}</h2>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">ID</th>
+            <td>{{ product.id }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Name</th>
+            <td>{{ product.name }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Price</th>
+            <td>{{ product.price }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Quantity</th>
+            <td>{{ product.quantity }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-outline-primary" (click)="goToIndex()">Back</button>
