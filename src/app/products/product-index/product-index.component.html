@@ -13,9 +13,16 @@
                     <button type="button" class="btn btn-outline-primary" [routerLink]="['/product', product.id, 'edit']">edit</button>
                 </div>
                 <div class="col-md-1">
-                    <button type="button" class="btn btn-outline-danger">delete</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="onDeleteButtonClicked(product.id)">delete</button>
                 </div>
             </div>
         </a>
+    </li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="offset-md-6 col-md-1">
+                <button type="button" class="btn btn-outline-success" [routerLink]="['/products/new']">create</button>
+            </div>
+        </div>
     </li>
 </ul>

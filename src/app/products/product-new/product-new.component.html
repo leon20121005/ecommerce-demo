@@ -1,0 +1,25 @@
+<p>product-new works!</p>
+
+<div class="card">
+    <h5 class="card-header">New product</h5>
+    <div class="card-body">
+        <form>
+            <ng-container>
+                Name:
+                <input type="text" class="form-control col-md-4" [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}">
+                Price:
+                <input type="text" class="form-control col-md-4" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}">
+                Quantity:
+                <input type="text" class="form-control col-md-4" [(ngModel)]="product.quantity" [ngModelOptions]="{standalone: true}">
+
+                <div class="form-group"></div>
+
+                <input type="submit" class="btn btn-outline-primary" (click)="onSubmitButtonClicked()" value="submit">
+                <button type="button" class="btn btn-outline-danger" (click)="onBackButtonClicked()">Back</button>
+            </ng-container>
+            <div class="error-message">
+                <p [innerHTML]="errorMessage"></p>
+            </div>
+        </form>
+    </div>
+</div>

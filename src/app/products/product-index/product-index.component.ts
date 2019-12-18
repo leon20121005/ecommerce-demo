@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../product';
-import { PRODUCTS } from '../mock-products';
+import { ProductsService } from '../products.service';
 
 @Component({
     selector: 'app-product-index',
@@ -13,12 +13,27 @@ export class ProductIndexComponent implements OnInit
 {
     products: Product[];
 
-    constructor()
+    constructor(private productsService: ProductsService)
     {
-        this.products = PRODUCTS;
+        this.productsService.getProducts().subscribe(snapshot => {
+            this.products = new Array<Product>();
+            snapshot.forEach(action => {
+                this.products.push({
+                    id: action.payload.doc.id,
+                    name: action.payload.doc.data().name,
+                    price: action.payload.doc.data().price,
+                    quantity: action.payload.doc.data().quantity
+                });
+            });
+        });
     }
 
     ngOnInit()
     {
+    }
+
+    onDeleteButtonClicked(id: string)
+    {
+        this.productsService.deleteProduct(id);
     }
 }
