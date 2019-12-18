@@ -31,7 +31,7 @@ export class ProductShowComponent implements OnInit
                     this.product.quantity = value.quantity;
                 });
             }
-        })
+        });
     }
 
     ngOnInit()

@@ -20,4 +20,4 @@ const productRoutes: Routes = [
     ]
 })
 
-export class ProductRoutingModule { }
+export class ProductsRoutingModule { }
