@@ -1,0 +1,20 @@
+<div class="card text-center">
+    <div class="card-header">
+        登入
+    </div>
+    <div class="card-body">
+        <div class="form-group offset-md-4 col-md-4">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="email">
+        </div>
+        <div class="form-group offset-md-4 col-md-4">
+            <label>密碼</label>
+            <input type="password" class="form-control" [(ngModel)]="password">
+        </div>
+        <button type="button" class="btn btn-outline-danger" (click)="onBackButtonClicked()">返回</button>
+        <button type="submit" class="btn btn-outline-primary" (click)="onSubmitButtonClicked()">登入</button>
+    </div>
+    <div class="error-message">
+        <p [innerHTML]="errorMessage"></p>
+    </div>
+</div>

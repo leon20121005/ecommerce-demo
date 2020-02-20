@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import { SessionNewComponent } from './sessions/session-new.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: AppComponent
+        loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)
     },
     {
         path: 'products',
         loadChildren: () => import('./products/products.module').then(mod => mod.ProductsModule)
+    },
+    {
+        path: 'login',
+        component: SessionNewComponent
     }
 ];
 
@@ -19,4 +23,6 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class AppRoutingModule { }
+export class AppRoutingModule
+{
+}
