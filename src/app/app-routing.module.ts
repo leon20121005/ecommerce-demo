@@ -13,6 +13,10 @@ const routes: Routes = [
         loadChildren: () => import('./products/products.module').then(mod => mod.ProductsModule)
     },
     {
+        path: 'users',
+        loadChildren: () => import('./users/users.module').then(mod => mod.UsersModule)
+    },
+    {
         path: 'login',
         component: SessionNewComponent
     }

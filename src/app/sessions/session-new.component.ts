@@ -28,8 +28,9 @@ export class SessionNewComponent implements OnInit
     onSubmitButtonClicked()
     {
         this.errorMessage = '';
-        this.sessionsService.createSession(this.email, this.password).then(value => {
-            console.log(value);
+        this.sessionsService.createSession(this.email, this.password).then(userCredential => {
+            console.log(userCredential);
+            this.navigateToHome();
         }).catch((error) => {
             this.errorMessage = error;
         });

@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AuthenticationService
 {
-    authenticationState: Observable<firebase.User>;
+    state: Observable<firebase.User>;
 
     constructor(private authentication: AngularFireAuth)
     {
-        this.authenticationState = this.authentication.authState;
+        this.state = this.authentication.authState;
     }
 
     signUp(email: string, password: string): Promise<any>

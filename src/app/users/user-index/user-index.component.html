@@ -1,0 +1,21 @@
+<p>user-index works!</p>
+
+<h2>Users</h2>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users">
+        <a class="text-decoration-none">
+            <div class="row">
+                <a class="offset-md-1 col-md-4 my-auto text-decoration-none" [routerLink]="['/users', user.id]">
+                    {{ user.email }}
+                </a>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-outline-primary" [routerLink]="['/users', user.id, 'edit']">edit</button>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-outline-danger" (click)="onDeleteButtonClicked(user.id)">delete</button>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

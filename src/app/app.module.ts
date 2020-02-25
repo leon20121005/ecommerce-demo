@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SessionNewComponent } from './sessions/session-new.component';
 import { ProductsModule } from './products/products.module';
+import { UsersModule } from './users/users.module';
 import { SessionsService } from './sessions/sessions.service';
 import { AuthenticationService } from './authentication.service';
 
@@ -28,7 +29,8 @@ import { AuthenticationService } from './authentication.service';
         AngularFirestoreModule,
         AngularFireAuthModule,
         AppRoutingModule,
-        ProductsModule
+        ProductsModule,
+        UsersModule
     ],
     providers: [SessionsService, AuthenticationService],
     bootstrap: [AppComponent]

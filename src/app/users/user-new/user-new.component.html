@@ -1,0 +1,41 @@
+<div class="card text-center">
+    <div class="card-header">
+        註冊
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form">
+        <div class="form-group offset-md-4 col-md-4">
+            <label>Email</label>
+            <input type="email" class="form-control"
+                [ngClass]="{'is-valid': form.get('email').valid && form.get('email').dirty,
+                            'is-invalid': form.get('email').invalid && form.get('email').dirty}"
+                formControlName="email">
+            <div class="invalid-feedback">
+                無效的電子郵件
+            </div>
+        </div>
+        <div class="form-group offset-md-4 col-md-4">
+            <label>密碼</label>
+            <input type="password" class="form-control"
+                [ngClass]="{'is-valid': form.get('password').valid && form.get('password').dirty,
+                            'is-invalid': form.get('password').invalid && form.get('password').dirty}"
+                formControlName="password">
+            <div class="invalid-feedback">
+                無效的密碼
+            </div>
+        </div>
+        <div class="form-group offset-md-4 col-md-4">
+            <label>確認密碼</label>
+            <input type="password" class="form-control"
+                [ngClass]="{'is-valid': (form.get('confirmPassword').valid && !form.errors) && form.get('confirmPassword').dirty,
+                            'is-invalid': (form.get('confirmPassword').invalid || form.errors) && form.get('confirmPassword').dirty}"
+                formControlName="confirmPassword">
+            <div class="invalid-feedback">
+                密碼不相符
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-danger" (click)="onBackButtonClicked()">返回</button>
+        <button type="submit" class="btn btn-outline-primary" (click)="onSubmitButtonClicked()">註冊</button>
+        </form>
+    </div>
+</div>

@@ -10,7 +10,7 @@
                     {{ product.name }}
                 </a>
                 <div class="col-md-1">
-                    <button type="button" class="btn btn-outline-primary" [routerLink]="['/product', product.id, 'edit']">edit</button>
+                    <button type="button" class="btn btn-outline-primary" [routerLink]="['/products', product.id, 'edit']">edit</button>
                 </div>
                 <div class="col-md-1">
                     <button type="button" class="btn btn-outline-danger" (click)="onDeleteButtonClicked(product.id)">delete</button>

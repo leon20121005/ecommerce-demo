@@ -1,0 +1,30 @@
+<p>user-show works!</p>
+
+<h2>{{ user.name }}</h2>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">ID</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Name</th>
+            <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Phone</th>
+            <td>{{ user.phone }}</td>
+        </tr>
+        <tr>
+            <th scope="row">IsAdmin</th>
+            <td>{{ user.isAdmin }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-outline-primary" (click)="onBackButtonClicked()">Back</button>
